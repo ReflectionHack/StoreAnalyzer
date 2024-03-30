@@ -1,9 +1,13 @@
 spring:
+  security:
+    user:
+      name: ${SEC_USER:root}
+      password: ${SEC_PASS:}
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/reflection?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: ${MYSQL_USER:root}
-    password: ${MYSQL_PASS}
+    username: ${DB_USER:root}
+    password: ${DB_PASS:}
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     #    defer-datasource-initialization: true
@@ -15,10 +19,6 @@ spring:
 #  sql:
 #    init:
 #      mode: never
-#  mvc:
-#    hiddenmethod:
-#      filter:
-#        enabled: true
 
 logging:
   level:

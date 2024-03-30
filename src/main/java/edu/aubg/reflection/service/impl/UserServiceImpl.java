@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserService {
                                         .setUsername(userAddBindingModel.getUsername())
                                         .setEmail(userAddBindingModel.getEmail())
                                         .setPassword(passwordEncoder.encode(userAddBindingModel.getPassword()))
+                                        .setCompanies(Set.of())
                         )
         );
     }
