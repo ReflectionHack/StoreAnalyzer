@@ -1,0 +1,338 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Sources/logo-icon-site.svg">
+    <title>Reflection</title>
+    <style>
+      *
+      {
+        margin: 0;
+        padding: 0;
+      }
+        .container {
+            background-color: #1a0d5c;
+            display: flex;
+            padding-bottom: 80px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            border-radius: 0 0 20px 20px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.05), 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            align-self: stretch;
+            display: flex;
+            gap: 2em;
+            font-size: 14px;
+            text-transform: uppercase;
+            justify-content: space-between;
+            padding: 1.5em 2em;
+        }
+
+        .logo {
+            aspect-ratio: 4.76;
+            object-fit: auto;
+            object-position: center;
+            width: 184px;
+            align-self: start;
+            max-width: 100%;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+            font-weight: 500;
+            justify-content: space-between;
+            margin: auto 0;
+            list-style-type: none;
+        }
+
+        .nav-link {
+        font-family: "Open Sans", sans-serif;
+         background-clip: text;
+         font-size: 16px;
+        font-weight: bold;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: var(--Blue-gradient, linear-gradient(180deg, #00002c 0%, #220c7d 100%));
+        }
+
+        .login-button {
+            font-family: Rounded Mplus 1c, sans-serif;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: var(--Blue-gradient, linear-gradient(180deg, #00002c 0%, #220c7d 100%));
+            color: var(--Colors-Base-White, #fff);
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: 0.28px;
+            line-height: 24px;
+            padding: 9px 33px;
+        }
+
+        @media (max-width: 991px) {
+            .login-button {
+                padding: 0 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+           .logo
+           {
+            align-self: center;
+           }
+
+            .nav
+            {
+              gap: 3em;
+            }
+
+        }
+
+        .hero-title {
+            color: var(--Colors-Base-White, #fff);
+            text-align: center;
+            letter-spacing: 0.85px;
+            text-transform: uppercase;
+            margin-top: 199px;
+            width: 1012px;
+            font: 800 82px/98px Rounded Mplus 1c, -apple-system, Roboto, Helvetica, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .hero-title {
+                max-width: 100%;
+                margin-top: 40px;
+                font-size: 40px;
+                line-height: 53px;
+            }
+        }
+
+        .hero-description {
+            color: #d3d3d3;
+            text-align: center;
+            letter-spacing: 0.05px;
+            margin-top: 27px;
+            font: 400 18px/111% Rounded Mplus 1c, -apple-system, Roboto, Helvetica, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .hero-description {
+                max-width: 100%;
+            }
+        }
+
+        .services-button {
+            border-radius: 12px;
+            border: 2px solid var(--Blue-gradient, #00002c);
+            background: radial-gradient(104.69% 141.42% at 0% 0%, #fff 43.8%, #e9e9e9 76.56%);
+            display: flex;
+            margin-top: 97px;
+            flex-direction: column;
+            font-size: 18px;
+            font-weight: 800;
+            text-align: center;
+            line-height: 133%;
+            justify-content: center;
+            padding: 16px 45px;
+        }
+
+        @media (max-width: 991px) {
+            .services-button {
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+        }
+
+        .services-text {
+            font-family: Rounded Mplus 1c, sans-serif;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-color: var(--Blue-gradient, linear-gradient(180deg, #00002c 0%, #220c7d 100%));
+        }
+
+        .talk-to-us {
+            color: #1a0d5c;
+            letter-spacing: -0.28px;
+            font: 400 14px Rounded Mplus 1c, -apple-system, Roboto, Helvetica, sans-serif;
+        }
+
+        .contacts-image {
+            aspect-ratio: 1.79;
+            object-fit: auto;
+            object-position: center;
+            width: 100%;
+            fill: #3c30a5;
+            align-self: stretch;
+            margin-top: 88px;
+        }
+
+        @media (max-width: 991px) {
+            .contacts-image {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+        }
+
+        .contacts-link {
+            color: #1a0d5c;
+            align-self: end;
+            margin: 1871px 308px 0 0;
+            font: 500 16px Inter, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .contacts-link {
+                margin: 40px 10px 0 0;
+            }
+        }
+        .login-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #00002c 0%, #220c7d 100%);
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.28px;
+        padding: 9px 33px;
+        font: 800 14px/24px "Rounded Mplus 1c", -apple-system, Roboto, Helvetica, sans-serif;
+       cursor: pointer;
+
+
+}
+.creators {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .creator {
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .creator-image {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .creator-name {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .creator-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .creators
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        .creators .row
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 5em;
+
+        }
+
+        .creator
+        {
+            display: flex;
+            flex-direction: column;
+            padding: 1em 2em;
+            justify-content: center;
+            background-color: rgb(129, 129, 244);
+            border-radius: 0.4em;
+            border: 1px solid blueviolet;
+            padding-bottom: 5em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2fb4cd61b526086c494ae12bceb4e02917d9ad97647388216a3757b855b086f3?apiKey=ab71e0a36124426fa9c0c0646049125b&" alt="Company logo" class="logo" />
+            </a>
+            <ul class="nav">
+              <li>
+                <a href="index.html" class="nav-link">Home</a></li>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About us</a>
+            </ul>
+            <button class="login-button">Log in</button>
+        </header>
+
+        <h1 class="hero-title">We are providing the newest and verified data analysis about your business</h1>
+
+        <div class="creators">
+            <div class="row">
+                 <div class="creator">
+                        <img src="Sources/Denislav.jpg" alt="Creator 1" class="creator-image">
+                        <h2 class="creator-name">Denislav Drenkov</h2>
+                    <p class="creator-description">C# Software Developer</p>
+                </div>
+
+                <div class="creator">
+                    <img src="Sources/Denislav.jpg" alt="Creator 1" class="creator-image">
+                    <h2 class="creator-name">Denislav Drenkov</h2>
+                    <p class="creator-description">C# Software Developer</p>
+                </div>
+
+                <div class="creator">
+                    <img src="Sources/Denislav.jpg" alt="Creator 1" class="creator-image">
+                    <h2 class="creator-name">Denislav Drenkov</h2>
+                    <p class="creator-description">C# Software Developer</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="creator">
+                    <img src="Sources/Denislav.jpg" alt="Creator 1" class="creator-image">
+                    <h2 class="creator-name">Denislav Drenkov</h2>
+                    <p class="creator-description">C# Software Developer</p>
+                </div>
+
+                <div class="creator">
+                    <img src="Sources/Denislav.jpg" alt="Creator 1" class="creator-image">
+                    <h2 class="creator-name">Denislav Drenkov</h2>
+                    <p class="creator-description">C# Software Developer</p>
+                </div>
+
+                <div class="creator">
+                    <img src="Sources/Denislav.jpg" alt="Creator 1" class="creator-image">
+                    <h2 class="creator-name">Denislav Drenkov</h2>
+                    <p class="creator-description">C# Software Developer</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b061bd181ef5b65f4aa264b4ab118d7be28300105994d0542830fe2ad442bcda?apiKey=ab71e0a36124426fa9c0c0646049125b&" alt="" class="contacts-image" /> -->
+        
+        
+    </div>
+    
+</body>
+</html>
+
