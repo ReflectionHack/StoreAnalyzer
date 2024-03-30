@@ -1,13 +1,13 @@
 package edu.aubg.reflection.model.dto;
 
-public class UserAddBindingModel {
+public class UserRegisterBindingModel {
 
     private String username;
     private String email;
     private String password;
     private String confirmPassword;
 
-    public UserAddBindingModel() {
+    public UserRegisterBindingModel() {
         super();
     }
 
@@ -15,7 +15,7 @@ public class UserAddBindingModel {
         return username;
     }
 
-    public UserAddBindingModel setUsername(String username) {
+    public UserRegisterBindingModel setUsername(String username) {
         this.username = username;
         return this;
     }
@@ -24,7 +24,7 @@ public class UserAddBindingModel {
         return email;
     }
 
-    public UserAddBindingModel setEmail(String email) {
+    public UserRegisterBindingModel setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -33,7 +33,7 @@ public class UserAddBindingModel {
         return password;
     }
 
-    public UserAddBindingModel setPassword(String password) {
+    public UserRegisterBindingModel setPassword(String password) {
         this.password = password;
         return this;
     }
@@ -42,7 +42,7 @@ public class UserAddBindingModel {
         return confirmPassword;
     }
 
-    public UserAddBindingModel setConfirmPassword(String confirmPassword) {
+    public UserRegisterBindingModel setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
         return this;
     }

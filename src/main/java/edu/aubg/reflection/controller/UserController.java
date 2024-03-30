@@ -1,7 +1,7 @@
 package edu.aubg.reflection.controller;
 
 import edu.aubg.reflection.model.dto.CompanyDTO;
-import edu.aubg.reflection.model.dto.UserAddBindingModel;
+import edu.aubg.reflection.model.dto.UserRegisterBindingModel;
 import edu.aubg.reflection.model.dto.UserDTO;
 import edu.aubg.reflection.service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -36,8 +36,13 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> registerUser(@RequestBody UserAddBindingModel userAddBindingModel) {
-        return ResponseEntity.ok(userService.registerUser(userAddBindingModel));
+    public ResponseEntity<UserDTO> registerUser(@RequestBody UserRegisterBindingModel userRegisterBindingModel) {
+        return ResponseEntity.ok(userService.registerUser(userRegisterBindingModel));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserDTO> loginUser(@RequestBody UserRegisterBindingModel userRegisterBindingModel) {
+        return ResponseEntity.ok(userService.loginUser(userRegisterBindingModel));
     }
 
     @PatchMapping("/update")

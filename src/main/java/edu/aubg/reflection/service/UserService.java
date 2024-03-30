@@ -1,7 +1,7 @@
 package edu.aubg.reflection.service;
 
 import edu.aubg.reflection.model.dto.CompanyDTO;
-import edu.aubg.reflection.model.dto.UserAddBindingModel;
+import edu.aubg.reflection.model.dto.UserRegisterBindingModel;
 import edu.aubg.reflection.model.dto.UserDTO;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public interface UserService {
 
     Set<CompanyDTO> getUserCompanies(String username);
 
-    UserDTO registerUser(UserAddBindingModel userAddBindingModel);
+    UserDTO registerUser(UserRegisterBindingModel userRegisterBindingModel);
 
     UserDTO updateUser(UserDTO userDTO);
 

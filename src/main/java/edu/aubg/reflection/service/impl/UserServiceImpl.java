@@ -1,7 +1,7 @@
 package edu.aubg.reflection.service.impl;
 
 import edu.aubg.reflection.model.dto.CompanyDTO;
-import edu.aubg.reflection.model.dto.UserAddBindingModel;
+import edu.aubg.reflection.model.dto.UserRegisterBindingModel;
 import edu.aubg.reflection.model.dto.UserDTO;
 import edu.aubg.reflection.model.entity.CompanyEntity;
 import edu.aubg.reflection.model.entity.UserEntity;
@@ -48,14 +48,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDTO registerUser(UserAddBindingModel userAddBindingModel) {
+    public UserDTO registerUser(UserRegisterBindingModel userRegisterBindingModel) {
         return toDTO(
                 userRepository
                         .save(
                                 new UserEntity()
-                                        .setUsername(userAddBindingModel.getUsername())
-                                        .setEmail(userAddBindingModel.getEmail())
-                                        .setPassword(passwordEncoder.encode(userAddBindingModel.getPassword()))
+                                        .setUsername(userRegisterBindingModel.getUsername())
+                                        .setEmail(userRegisterBindingModel.getEmail())
+                                        .setPassword(passwordEncoder.encode(userRegisterBindingModel.getPassword()))
                                         .setCompanies(Set.of())
                         )
         );

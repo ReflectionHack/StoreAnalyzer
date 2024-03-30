@@ -22,7 +22,15 @@ public class SecurityConfiguration {
                     auth.requestMatchers("/").permitAll();
                     auth.anyRequest().permitAll();
                 })
-                .formLogin(Customizer.withDefaults())
+                .formLogin(
+                        login ->
+                                login.loginPage("/users/login")
+                                        .usernameParameter("username")
+                                        .passwordParameter("password")
+                                        .failureUrl("/users/login?error")
+                                        .defaultSuccessUrl("/")
+                                        .permitAll()
+                )
                 .build();
     }
 
