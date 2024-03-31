@@ -40,4 +40,21 @@ public class RestServiceImpl implements RestService {
             return "Error: " + e.getMessage();
         }
     }
+
+    @Override
+    public String consumeMessage(String topic) {
+        String url = "http://localhost:8081/message/" + topic;
+
+        try {
+            ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+
+            if (response.getStatusCode().is2xxSuccessful()) {
+                return response.getBody();
+            } else {
+                return "Error: " + response.getStatusCode();
+            }
+        } catch (Exception e) {
+            return "Error: " + e.getMessage();
+        }
+    }
 }
