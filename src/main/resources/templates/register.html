@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/js/login.js">
+    <link rel="stylesheet" href="/css/login.css">
+
+    <title>Login page in HTML</title>
+</head>
+<body>
+<form id="signup-form" action="/users/register" method="post">
+    <div class="headingsContainer">
+        <h3>Sign up</h3>
+        <p>Register with a new account</p>
+    </div>
+
+    <div class="mainContainer">
+        <label for="email">Your email</label>
+        <input type="email" placeholder="Enter Email" name="email" id="email" required>
+
+        <label for="password">Choose a password</label>
+        <input type="password" placeholder="Choose Password" name="password" id="password" required>
+
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword" required>
+
+        <div class="termsContainer">
+            <label>
+                <input type="checkbox" name="agree-terms" required> I agree to the Polices
+            </label>
+        </div>
+
+        <button type="submit">Sign up</button>
+
+        <p class="register">Already a member? <a href="/login" id="login-link">Login here!</a></p>
+
+    </div>
+</form>
+
+
+</body>
+</html>

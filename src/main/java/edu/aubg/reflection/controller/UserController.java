@@ -40,11 +40,6 @@ public class UserController {
         return ResponseEntity.ok(userService.registerUser(userRegisterBindingModel));
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<UserDTO> loginUser(@RequestBody UserRegisterBindingModel userRegisterBindingModel) {
-        return ResponseEntity.ok(userService.loginUser(userRegisterBindingModel));
-    }
-
     @PatchMapping("/update")
     public ResponseEntity<UserDTO> updateUser(@RequestBody UserDTO userDTO) {
         return ResponseEntity.ok(userService.updateUser(userDTO));

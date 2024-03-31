@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../js/login.js">
-    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="/js/login.js">
+    <link rel="stylesheet" href="/css/login.css">
 
     <title>Login page in HTML</title>
 </head>
 <body>
-    <form id="login-form" action="">
+    <form id="login-form" action="/users/login" method="post">
         <div class="headingsContainer">
             <h3>Sign in</h3>
             <p>Sign in with your username and password</p>
@@ -18,10 +18,10 @@
 
         <div class="mainContainer">
             <label for="username">Your username</label>
-            <input type="text" placeholder="Enter Username" name="username" required>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
-            <label for="pswrd">Your password</label>
-            <input type="password" placeholder="Enter Password" name="pswrd" required>
+            <label for="password">Your password</label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
             <div class="subcontainer">
                 <label>
@@ -32,55 +32,26 @@
 
             <button type="submit">Login</button>
 
-            <p class="register">Not a member?  <a href="#" id="signup-link">Register here!</a></p>
+            <p class="register">Not a member?  <a href="/register" id="signup-link">Register here!</a></p>
 
         </div>
 
     </form>
 
-    <form id="signup-form" action="">
-        <div class="headingsContainer">
-            <h3>Sign up</h3>
-            <p>Register with a new account</p>
-        </div>
+<!--    <script>-->
+<!--        document.getElementById('signup-form').style.display = 'none'; // Hide sign-up form initially-->
 
-        <div class="mainContainer">
-            <label for="email">Your email</label>
-            <input type="email" placeholder="Enter Email" name="email" required>
+<!--        document.getElementById('signup-link').addEventListener('click', function(event) {-->
+<!--            event.preventDefault();-->
+<!--            document.getElementById('login-form').style.display = 'none';-->
+<!--            document.getElementById('signup-form').style.display = 'block';-->
+<!--        });-->
 
-            <label for="new-pswrd">Choose a password</label>
-            <input type="password" placeholder="Choose Password" name="new-pswrd" required>
-
-            <label for="confirm-pswrd">Confirm password</label>
-            <input type="password" placeholder="Confirm Password" name="confirm-pswrd" required>
-
-            <div class="termsContainer">
-                <label>
-                    <input type="checkbox" name="agree-terms" required> I agree to the Polices
-                </label>
-            </div>
-
-            <button type="submit">Sign up</button>
-
-            <p class="register">Already a member? <a href="#" id="login-link">Login here!</a></p>
-
-        </div>
-    </form>
-
-    <script>
-        document.getElementById('signup-form').style.display = 'none'; // Hide sign-up form initially
-
-        document.getElementById('signup-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('login-form').style.display = 'none';
-            document.getElementById('signup-form').style.display = 'block';
-        });
-
-        document.getElementById('login-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('signup-form').style.display = 'none';
-            document.getElementById('login-form').style.display = 'block';
-        });
-    </script>
+<!--        document.getElementById('login-link').addEventListener('click', function(event) {-->
+<!--            event.preventDefault();-->
+<!--            document.getElementById('signup-form').style.display = 'none';-->
+<!--            document.getElementById('login-form').style.display = 'block';-->
+<!--        });-->
+<!--    </script>-->
 </body>
 </html>
