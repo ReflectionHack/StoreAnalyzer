@@ -114,10 +114,7 @@ public class UserServiceImpl implements UserService {
         return new CompanyDTO(
                 company.getName(),
                 company.getAddress(),
-                company.getCity(),
-                company.getCountry(),
-                company.getEmail(),
-                company.getPhone(),
+                "",
                 company.getTaxId()
         );
     }

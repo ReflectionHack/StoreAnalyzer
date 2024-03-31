@@ -17,67 +17,67 @@ public class CompanyServiceImpl implements CompanyService {
         this.companyRepository = companyRepository;
     }
 
-    @Override
-    public List<CompanyDTO> getAllCompanies() {
-        return companyRepository
-                .findAll()
-                .stream()
-                .map(this::toDTO)
-                .toList();
-    }
+//    @Override
+//    public List<CompanyDTO> getAllCompanies() {
+//        return companyRepository
+//                .findAll()
+//                .stream()
+//                .map(this::toDTO)
+//                .toList();
+//    }
 
-    @Override
-    public CompanyDTO getCompanyByTaxId(String taxId) {
-        return companyRepository
-                .findByTaxId(taxId)
-                .map(this::toDTO)
-                .orElseThrow(() -> new RuntimeException("Company not found"));
-    }
+//    @Override
+//    public CompanyDTO getCompanyByTaxId(String taxId) {
+//        return companyRepository
+//                .findByTaxId(taxId)
+//                .map(this::toDTO)
+//                .orElseThrow(() -> new RuntimeException("Company not found"));
+//    }
 
-    @Override
-    public CompanyDTO createCompany(CompanyDTO companyDTO) {
-        CompanyEntity company = new CompanyEntity()
-                .setName(companyDTO.name())
-                .setAddress(companyDTO.address())
-                .setCity(companyDTO.city())
-                .setCountry(companyDTO.country())
-                .setEmail(companyDTO.email())
-                .setPhone(companyDTO.phone())
-                .setTaxId(companyDTO.taxId());
+//    @Override
+//    public CompanyDTO createCompany(CompanyDTO companyDTO) {
+//        CompanyEntity company = new CompanyEntity()
+//                .setName(companyDTO.name())
+//                .setAddress(companyDTO.address())
+//                .setCity(companyDTO.city())
+//                .setCountry(companyDTO.country())
+//                .setEmail(companyDTO.email())
+//                .setPhone(companyDTO.phone())
+//                .setTaxId(companyDTO.taxId());
+//
+//        return toDTO(companyRepository.save(company));
+//    }
 
-        return toDTO(companyRepository.save(company));
-    }
+//    @Override
+//    public CompanyDTO updateCompany(CompanyDTO companyDTO) {
+//        CompanyEntity company = companyRepository
+//                .findByTaxId(companyDTO.taxId())
+//                .orElseThrow(() -> new RuntimeException("Company not found"))
+//                .setName(companyDTO.name())
+//                .setAddress(companyDTO.address())
+//                .setCity(companyDTO.city())
+//                .setCountry(companyDTO.country())
+//                .setEmail(companyDTO.email())
+//                .setPhone(companyDTO.phone());
+//
+//        return toDTO(companyRepository.save(company));
+//    }
 
-    @Override
-    public CompanyDTO updateCompany(CompanyDTO companyDTO) {
-        CompanyEntity company = companyRepository
-                .findByTaxId(companyDTO.taxId())
-                .orElseThrow(() -> new RuntimeException("Company not found"))
-                .setName(companyDTO.name())
-                .setAddress(companyDTO.address())
-                .setCity(companyDTO.city())
-                .setCountry(companyDTO.country())
-                .setEmail(companyDTO.email())
-                .setPhone(companyDTO.phone());
+//    @Override
+//    public void deleteCompany(String taxId) {
+//        companyRepository.findByTaxId(taxId)
+//                .orElseThrow(() -> new RuntimeException("Company not found"));
+//    }
 
-        return toDTO(companyRepository.save(company));
-    }
-
-    @Override
-    public void deleteCompany(String taxId) {
-        companyRepository.findByTaxId(taxId)
-                .orElseThrow(() -> new RuntimeException("Company not found"));
-    }
-
-    private CompanyDTO toDTO(CompanyEntity company) {
-        return new CompanyDTO(
-                company.getName(),
-                company.getAddress(),
-                company.getCity(),
-                company.getCountry(),
-                company.getEmail(),
-                company.getPhone(),
-                company.getTaxId()
-        );
-    }
+//    private CompanyDTO toDTO(CompanyEntity company) {
+//        return new CompanyDTO(
+//                company.getName(),
+//                company.getAddress(),
+//                company.getCity(),
+//                company.getCountry(),
+//                company.getEmail(),
+//                company.getPhone(),
+//                company.getTaxId()
+//        );
+//    }
 }

@@ -5,14 +5,14 @@ import edu.aubg.reflection.model.dto.CompanyDTO;
 import java.util.List;
 
 public interface CompanyService {
-    List<CompanyDTO> getAllCompanies();
+//    List<CompanyDTO> getAllCompanies();
 
-    CompanyDTO getCompanyByTaxId(String taxId);
+//    CompanyDTO getCompanyByTaxId(String taxId);
 
-    CompanyDTO createCompany(CompanyDTO companyDTO);
+//    CompanyDTO createCompany(CompanyDTO companyDTO);
 
-    CompanyDTO updateCompany(CompanyDTO companyDTO);
+//    CompanyDTO updateCompany(CompanyDTO companyDTO);
 
-    void deleteCompany(String taxId);
+//    void deleteCompany(String taxId);
 
 }
