@@ -1,8 +1,10 @@
-body
+body, html
     {
+        height: 100%;
+        margin: 0;
         display: flex;
-        justify-content: center;
-        align-content: center;
+        justify-content: center; /* Horizontally center content */
+        align-items: center; /* Vertically center content */
     }
 
     .login-container {
@@ -12,6 +14,7 @@ body
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         max-width: 300px;
         width: 100%;
+        padding: 2em 5em;
     }
 
     h2 {
