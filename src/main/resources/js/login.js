@@ -3,8 +3,10 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     const formData = new FormData(event.target); // Get form data
     const requestData = Object.fromEntries(formData); // Convert form data to JSON
 
-    // Make fetch request
-    fetch("your_server_endpoint", {
+    fetch("http://localhost:8080/users/login?"+new URLSearchParams({
+        username:username,
+        password:password
+    }), {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,11 +20,9 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             return response.json();
         })
         .then(data => {
-            // Handle successful response here
             console.log(data);
         })
         .catch(error => {
-            // Handle errors here
             console.error("Fetch error:", error);
         });
 });
