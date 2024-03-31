@@ -17,23 +17,23 @@ public class CompanyController {
         this.companyService = companyService;
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<CompanyDTO>> getAllCompanies() {
-        return ResponseEntity.ok(companyService.getAllCompanies());
-    }
+//    @GetMapping("/all")
+//    public ResponseEntity<List<CompanyDTO>> getAllCompanies() {
+//        return ResponseEntity.ok(companyService.getAllCompanies());
+//    }
 
-    @GetMapping("/{taxId}")
-    public ResponseEntity<CompanyDTO> getCompanyByTaxId(@PathVariable String taxId) {
-        return ResponseEntity.ok(companyService.getCompanyByTaxId(taxId));
-    }
+//    @GetMapping("/{taxId}")
+//    public ResponseEntity<CompanyDTO> getCompanyByTaxId(@PathVariable String taxId) {
+//        return ResponseEntity.ok(companyService.getCompanyByTaxId(taxId));
+//    }
 
-    @PostMapping("/create")
-    public ResponseEntity<CompanyDTO> createCompany(@RequestBody CompanyDTO companyDTO) {
-        return ResponseEntity.ok(companyService.createCompany(companyDTO));
-    }
+//    @PostMapping("/create")
+//    public ResponseEntity<CompanyDTO> createCompany(@RequestBody CompanyDTO companyDTO) {
+//        return ResponseEntity.ok(companyService.createCompany(companyDTO));
+//    }
 
-    @PatchMapping("/update")
-    public ResponseEntity<CompanyDTO> updateCompany(@RequestBody CompanyDTO companyDTO) {
-        return ResponseEntity.ok(companyService.updateCompany(companyDTO));
-    }
+//    @PatchMapping("/update")
+//    public ResponseEntity<CompanyDTO> updateCompany(@RequestBody CompanyDTO companyDTO) {
+//        return ResponseEntity.ok(companyService.updateCompany(companyDTO));
+//    }
 }

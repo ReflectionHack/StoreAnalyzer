@@ -6,6 +6,7 @@ import edu.aubg.reflection.model.dto.UserDTO;
 import edu.aubg.reflection.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Set;
@@ -36,8 +37,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> registerUser(@RequestBody UserRegisterBindingModel userRegisterBindingModel) {
-        return ResponseEntity.ok(userService.registerUser(userRegisterBindingModel));
+    public ModelAndView registerUser(@RequestBody UserRegisterBindingModel userRegisterBindingModel) {
+        userService.registerUser(userRegisterBindingModel);
+        return new ModelAndView("redirect:/login");
     }
 
     @PatchMapping("/update")
@@ -51,11 +53,16 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{username}/add-company/{taxId}")
-    public ResponseEntity<Void> addCompanyToUser(@PathVariable String username, @PathVariable String taxId) {
-        userService.addCompanyToUser(username, taxId);
-        return ResponseEntity.noContent().build();
+    @PostMapping("/company/create")
+    public ModelAndView createCompany(CompanyDTO companyDTO) {
+        return new ModelAndView("redirect:/companies/create");
     }
+
+//    @PostMapping("/company/create")
+//    public ModelAndView addCompanyToUser(@PathVariable CompanyDTO companyDTO) {
+//        userService.addCompanyToUser(username, taxId);
+//        return ModelAndView("redirect:/users/{username}/companies");
+//    }
 
     @PatchMapping("/{username}/remove-company/{taxId}")
     public ResponseEntity<Void> removeCompanyFromUser(@PathVariable String username, @PathVariable String taxId) {

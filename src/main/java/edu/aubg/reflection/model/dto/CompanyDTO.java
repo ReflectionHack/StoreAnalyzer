@@ -3,13 +3,10 @@ package edu.aubg.reflection.model.dto;
 public record CompanyDTO(
         String name,
         String address,
-        String city,
-        String country,
-        String email,
-        String phone,
+        String owner,
         String taxId
 ) {
     public CompanyDTO() {
-        this("", "", "", "", "", "", "");
+        this("", "", "", "");
     }
 }
